@@ -168,7 +168,7 @@ func handleApplication() throws {
             let customizations = CodeGenerationCustomizations(
                 validationErrorDeclaration: validationErrorDeclaration,
                 unrecognizedErrorDeclaration: unrecognizedErrorDeclaration,
-                generateModelShapeConversions: false,
+                generateModelShapeConversions: true,
                 optionalsInitializeEmpty: true,
                 fileHeader: nil,
                 httpClientConfiguration: httpClientConfiguration)

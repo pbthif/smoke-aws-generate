@@ -1,34 +1,32 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "ServiceModelSwiftCodeGenerate",
-        "repositoryURL": "https://github.com/amzn/service-model-swift-code-generate.git",
-        "state": {
-          "branch": null,
-          "revision": "2693c4d851d1359cd62e7d791546a86bf5bde583",
-          "version": "2.4.0"
-        }
-      },
-      {
-        "package": "SwaggerParser",
-        "repositoryURL": "https://github.com/tachyonics/SwaggerParser.git",
-        "state": {
-          "branch": null,
-          "revision": "c0eb70485c59a9d7dd6765dcd303b49fdb3040ee",
-          "version": "0.6.4"
-        }
-      },
-      {
-        "package": "Yams",
-        "repositoryURL": "https://github.com/jpsim/Yams.git",
-        "state": {
-          "branch": null,
-          "revision": "6652aa7b793d3c8a075db0614acb575fcaecf457",
-          "version": "0.7.0"
-        }
+  "pins" : [
+    {
+      "identity" : "service-model-swift-code-generate",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/amzn/service-model-swift-code-generate.git",
+      "state" : {
+        "revision" : "c898d557549a62e2fd889acaff0e6eb9be75a4a3",
+        "version" : "2.5.0"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "swaggerparser",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/tachyonics/SwaggerParser.git",
+      "state" : {
+        "revision" : "c0eb70485c59a9d7dd6765dcd303b49fdb3040ee",
+        "version" : "0.6.4"
+      }
+    },
+    {
+      "identity" : "yams",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jpsim/Yams.git",
+      "state" : {
+        "revision" : "6652aa7b793d3c8a075db0614acb575fcaecf457",
+        "version" : "0.7.0"
+      }
+    }
+  ],
+  "version" : 2
 }

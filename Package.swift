@@ -1,4 +1,4 @@
-// swift-tools-version:5.0
+// swift-tools-version:5.6
 //
 // Copyright 2019-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 //
@@ -17,6 +17,9 @@ import PackageDescription
 
 let package = Package(
     name: "SmokeAWSGenerate",
+    platforms: [
+        .macOS(.v10_15), .iOS(.v10)
+    ],
     products: [
         .executable(
             name: "SmokeAWSGenerate",
@@ -35,21 +38,24 @@ let package = Package(
             targets: ["CoralToJSONServiceModel"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/amzn/service-model-swift-code-generate.git", from: "2.4.0"),
+        .package(url: "https://github.com/amzn/service-model-swift-code-generate.git", from: "2.5.0"),
     ],
     targets: [
-        .target(
+        .executableTarget(
             name: "SmokeAWSGenerate",
             dependencies: ["SmokeAWSModelGenerate"]),
-        .target(
+        .executableTarget(
             name: "APIGatewayClientGenerate",
             dependencies: ["APIGatewayClientModelGenerate"]),
         .target(
             name: "CoralToJSONServiceModel",
-            dependencies: ["ServiceModelEntities"]),
+            dependencies: [
+                .product(name: "ServiceModelEntities", package: "service-model-swift-code-generate")]),
         .target(
             name: "SmokeAWSModelGenerate",
-            dependencies: ["ServiceModelGenerate", "CoralToJSONServiceModel"]),
+            dependencies: [
+                "CoralToJSONServiceModel",
+                .product(name: "ServiceModelGenerate", package: "service-model-swift-code-generate")]),
         .target(
             name: "APIGatewayClientModelGenerate",
             dependencies: ["SmokeAWSModelGenerate"]),
